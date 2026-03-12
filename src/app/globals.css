@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf6f0;
+  --foreground: #3d3229;
+  --sakura: #e8a0b4;
+  --sakura-light: #f5d5de;
+  --moss: #7a9e7e;
+  --moss-light: #b8d4ba;
+  --bark: #8b6f47;
+  --bark-light: #c4a87c;
+  --scroll: #f5eed6;
+  --ink: #2c1810;
+  --lantern: #e8c170;
+  --lantern-glow: #f5dfa0;
+  --water: #8bb8c4;
+  --spring: #c8e6c9;
+  --summer: #fff9c4;
+  --autumn: #ffccbc;
+  --winter: #e1f5fe;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-sakura: var(--sakura);
+  --color-sakura-light: var(--sakura-light);
+  --color-moss: var(--moss);
+  --color-moss-light: var(--moss-light);
+  --color-bark: var(--bark);
+  --color-bark-light: var(--bark-light);
+  --color-scroll: var(--scroll);
+  --color-ink: var(--ink);
+  --color-lantern: var(--lantern);
+  --color-lantern-glow: var(--lantern-glow);
+  --color-water: var(--water);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a1510;
+    --foreground: #e8ddd0;
+    --scroll: #2c2418;
+    --ink: #e8ddd0;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(60px, 120px) rotate(180deg); opacity: 0; }
+}
+
+@keyframes unroll {
+  0% { max-height: 0; opacity: 0; }
+  100% { max-height: 500px; opacity: 1; }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes celebration {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-3deg); }
+  50% { transform: scale(1.15) rotate(0deg); }
+  75% { transform: scale(1.1) rotate(3deg); }
+}
+
+@keyframes blossom-fall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-wobble { animation: wobble 0.5s ease-in-out; }
+.animate-celebration { animation: celebration 0.6s ease-in-out; }
+.animate-unroll { animation: unroll 0.5s ease-out forwards; }
+.animate-blossom { animation: blossom-fall 4s linear forwards; }
+.animate-glow { animation: glow-pulse 2s ease-in-out infinite; }
