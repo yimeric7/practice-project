@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ZeroCommentary from "@/components/ZeroCommentary";
+import ZeroMascot from "@/components/ZeroMascot";
 import { useMissions } from "@/lib/hooks";
 import { generateId } from "@/lib/utils";
 import type { Difficulty, Mission } from "@/lib/types";
@@ -144,8 +145,8 @@ export default function ArenaPage() {
 
         {/* Mission grid */}
         {missions.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-24">
-            <ZeroCommentary trigger="empty" />
+          <div className="flex flex-col items-center justify-center gap-4 py-24">
+            <ZeroMascot mood="taunt" showQuote />
           </div>
         ) : (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeroZero from "@/components/HeroZero";
 
 export default function Home() {
   return (
@@ -44,17 +45,8 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative z-10 flex min-h-[85vh] flex-col items-center justify-center px-6 text-center">
-        {/* ZERO mascot speech bubble */}
-        <div className="animate-float mb-6">
-          <div className="relative inline-block rounded-xl border border-neon-yellow/30 bg-dark-card/80 px-6 py-3 backdrop-blur-sm">
-            <p className="pixel-heading text-sm text-neon-yellow neon-text-yellow">
-              &quot;YOU SHOWED UP? RESPECT. NOW LET&apos;S GET TO WORK.&quot;
-            </p>
-            <span className="text-xs text-zinc-500">— ZERO, your hype ninja</span>
-            {/* Speech bubble tail */}
-            <div className="absolute -bottom-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 border-b border-r border-neon-yellow/30 bg-dark-card/80" />
-          </div>
-        </div>
+        {/* ZERO mascot */}
+        <HeroZero />
 
         {/* Main title */}
         <h1 className="pixel-heading animate-slam-in mb-4 text-5xl font-black leading-tight text-white md:text-7xl lg:text-8xl">

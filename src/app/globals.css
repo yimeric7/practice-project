@@ -115,6 +115,18 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
+/* Celebration bounce */
+@keyframes celebration {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(-5deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-8px) rotate(5deg); }
+}
+
+.animate-celebration {
+  animation: celebration 0.6s ease-in-out infinite;
+}
+
 /* Slam-in animation */
 @keyframes slam-in {
   0% { transform: scale(3) rotate(-5deg); opacity: 0; }

@@ -10,6 +10,7 @@ import HealthBar from "@/components/HealthBar";
 import HitEffect from "@/components/HitEffect";
 import FuryOverlay from "@/components/FuryOverlay";
 import ZeroCommentary from "@/components/ZeroCommentary";
+import ZeroMascot from "@/components/ZeroMascot";
 import { useReviewSession } from "@/lib/hooks";
 import { getMission, saveMission } from "@/lib/storage";
 import { recordSession } from "@/lib/storage";
@@ -117,8 +118,9 @@ function FightSession({ mission }: { mission: Mission }) {
           </div>
 
           <div className="mb-8">
-            <ZeroCommentary
-              trigger={session.phase === "complete" ? "win" : "lose"}
+            <ZeroMascot
+              mood={session.phase === "complete" ? "victory" : "taunt"}
+              showQuote
             />
           </div>
 
